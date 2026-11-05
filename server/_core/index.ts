@@ -49,8 +49,8 @@ async function requestCompletion(baseUrl: string, apiKey: string, model: string 
 async function generateTsihoharanaReply(messages: ChatMessage[]) {
   const conversation = [{ role: "system" as const, content: TSIHOHARANA_SYSTEM_PROMPT }, ...messages];
   const openSourceKey = process.env.OPEN_SOURCE_AI_API_KEY?.trim();
-  const openSourceBase = process.env.OPEN_SOURCE_AI_BASE_URL?.trim() || "https://router.huggingface.co/v1";
-  const openSourceModel = process.env.OPEN_SOURCE_AI_MODEL?.trim() || "Qwen/Qwen2.5-7B-Instruct";
+  const openSourceBase = process.env.OPEN_SOURCE_AI_BASE_URL?.trim() || "https://openrouter.ai/api/v1";
+  const openSourceModel = process.env.OPEN_SOURCE_AI_MODEL?.trim() || "openrouter/free";
 
   if (openSourceKey) {
     return requestCompletion(openSourceBase, openSourceKey, openSourceModel, conversation);

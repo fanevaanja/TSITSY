@@ -10,6 +10,6 @@ services:
       - key: OPEN_SOURCE_AI_API_KEY
         sync: false
       - key: OPEN_SOURCE_AI_BASE_URL
-        value: https://router.huggingface.co/v1
+        value: https://openrouter.ai/api/v1
       - key: OPEN_SOURCE_AI_MODEL
-        value: Qwen/Qwen2.5-7B-Instruct
+        value: openrouter/free
